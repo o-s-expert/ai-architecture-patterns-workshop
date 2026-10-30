@@ -1,0 +1,68 @@
+site_name: AI Architecture Patterns Workshop
+
+site_description: >
+  Implementing AI Architecture Patterns
+  with Enterprise Java, LangChain4j, and CDI
+
+site_url: https://o-s-expert.github.io/ai-architecture-patterns-workshop/
+
+repo_url: https://github.com/O-S-Expert/ai-architecture-patterns-workshop
+
+repo_name: O-S-Expert/ai-architecture-patterns-workshop
+
+edit_uri: ""
+
+theme:
+  name: material
+  language: en
+  logo: assets/images/branding/os_logo.png
+  favicon: assets/images/branding/os_logo.png
+  font:
+    text: Montserrat
+    code: Roboto Mono
+  palette:
+    scheme: default
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - toc.follow
+
+extra_css:
+  - assets/css/custom.css
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Labs:
+      - Overview: labs/index.md
+      - "Lab 1: Hello World": labs/lab1-hello-world.md
+      - "Lab 2: Memory": labs/lab2-memory.md
+      - "Lab 3: Annotations": labs/lab3-annotations.md
+      - "Lab 4: RAG": labs/lab4-rag.md
+      - "Lab 5: Planning": labs/lab5-planning.md
+  - Next Steps: next-steps.md
+  - About: about.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - search

@@ -1,1 +1,57 @@
+= AI Architecture Patterns Workshop
+:toc:
+:toclevels: 2
 
+A hands-on workshop on integrating AI capabilities into enterprise applications with Enterprise Java, LangChain4j, and CDI.
+
+== Workshop Website
+
+https://o-s-expert.github.io/ai-architecture-patterns-workshop/[Open Workshop Website]
+
+== Overview
+
+The workshop (about 4 hours) explores key AI architecture patterns through five progressive labs that share a consistent scenario.
+
+== Technology Stack
+
+* Java and Maven
+* CDI and MicroProfile
+* LangChain4j
+* Google Gemini
+* MkDocs Material (documentation website)
+
+== Laboratories
+
+[cols="1,2,1,4"]
+|===
+|Lab |Title |Duration |Description
+
+|1 |Hello World |20 min |Connect Enterprise Java to an LLM using CDI and LangChain4j.
+|2 |Memory |25 min |Add conversational memory and session isolation.
+|3 |Annotations |25 min |Use declarative AI services, prompts, and tools.
+|4 |RAG |45 min |Retrieve business knowledge and ground responses.
+|5 |Planning |45 min |Generate, validate, and execute a structured plan.
+|===
+
+NOTE: The Java lab implementations will be added under `src/main/java/`.
+
+== Documentation Development
+
+[source,bash]
+----
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements-docs.txt
+mkdocs serve
+----
+
+Validate the production build with:
+
+[source,bash]
+----
+mkdocs build --strict
+----
+
+== Website Deployment
+
+The workflow `.github/workflows/deploy-docs.yml` builds the site with `mkdocs build --strict` and publishes it to GitHub Pages using GitHub Actions on every push to `main`, or manually through `workflow_dispatch`. Generated output (`site/`) is not committed.
