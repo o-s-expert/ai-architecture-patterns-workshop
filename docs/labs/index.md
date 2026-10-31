@@ -25,4 +25,4 @@ The order is an educational progression, not a strict ranking of AI autonomy. Me
 Complete the labs sequentially; each one builds on the previous. Annotations and declarative AI Services are used throughout and summarized in [Next Steps](../next-steps.md).
 
 !!! note "Tutorial status"
-    Labs 1 and 2 are complete step-by-step tutorials. Labs 3, 4, and 5 are under development and currently describe the concept and structure only.
+    Labs 1 to 4 are complete step-by-step tutorials. Lab 5 is under development and currently describes the concept and structure only.
