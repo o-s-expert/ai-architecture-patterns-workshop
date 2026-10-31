@@ -34,11 +34,15 @@ Lab 3 uses a local embedding model and an in-memory store. To see how the same a
 
 ### Reflection
 
-Use evaluation and refinement loops to improve generated outputs: a model (or a separate evaluator) critiques a draft against criteria, and the result is revised. It builds on [Lab 1](labs/lab1-hello-world.md) services and [Lab 5](labs/lab5-planning.md) validation.
+Lab 4 implements evaluation and refinement loops: a reviewer critiques a draft against criteria and the generator revises it, within a Java-enforced limit. Extensions include deterministic validators, scoring models, and dedicated evaluator pipelines. See [Lab 4](labs/lab4-reflection.md).
+
+### Explicit Planning
+
+[Lab 5](labs/lab5-planning.md) uses model-directed tool calling: the model picks the next tool one step at a time. A plan-first architecture would instead generate a structured plan, validate it, request approval if needed, execute approved steps deterministically, observe the results, and re-plan when necessary. Lab 5 does not implement these stages.
 
 ### ReAct
 
-Dynamic reasoning and tool execution based on observations. The model alternates between reasoning, calling a tool, and observing the result. It builds on tool calling, but gives the model more autonomy than a fixed plan from Lab 5, so guardrails matter.
+Dynamic reasoning and tool execution based on observations. The model alternates between reasoning, calling a tool, and observing the result. Lab 5 is already a ReAct-like loop in this sense; richer ReAct designs add explicit reasoning traces and stronger guardrails.
 
 - [ReAct paper](https://arxiv.org/abs/2210.03629)
 
