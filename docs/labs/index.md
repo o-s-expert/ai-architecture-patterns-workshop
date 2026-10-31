@@ -1,46 +1,28 @@
 # Labs
 
-Five hands-on labs build on a shared scenario and project structure. All exercises use **Enterprise Java, LangChain4j, and CDI**, and are intended to share the same application context.
+Five hands-on labs build one progression: **DAG → Memory → RAG → Reflection → Planning**. All exercises use **Enterprise Java, LangChain4j, CDI, and Google Gemini**.
 
-## Learning progression
-
-**LLM Integration → Memory → Declarative AI Services → RAG → Planning**
+Each lab gives step-by-step instructions so you create every required Java source file yourself. The instructor's reference implementations are not published; the tutorials contain the complete code you need.
 
 ## Overview
 
-| Lab | Focus | Duration | Prerequisite |
+| Lab | Duration | Problem | Architectural learning objective |
 |---|---|---|---|
-| [Lab 1: Hello World](lab1-hello-world.md) | Connect Java to an LLM with CDI | 20 minutes | [Getting Started](../getting-started.md) |
-| [Lab 2: Memory](lab2-memory.md) | Conversational memory and session isolation | 25 minutes | Lab 1 |
-| [Lab 3: Annotations](lab3-annotations.md) | Declarative AI services, prompts, and tools | 25 minutes | Lab 2 |
-| [Lab 4: RAG](lab4-rag.md) | Retrieval-Augmented Generation | 45 minutes | Lab 3 |
-| [Lab 5: Planning](lab5-planning.md) | Generate, validate, and execute plans | 45 minutes | Lab 4 |
+| [Lab 1 — DAG: AI Book Recommendations](lab1-hello-world.md) | 20 min | Recommend what to read next without a hand-curated catalog | A deterministic Java workflow that integrates probabilistic model output |
+| [Lab 2 — Conversational Memory](lab2-memory.md) | 25 min | LLM calls forget earlier requests, and users must not see each other's context | Application-managed context and session isolation |
+| [Lab 3 — Retrieval-Augmented Generation](lab3-rag.md) | 45 min | Models do not know your private or recent documents | External knowledge, retrieval, and grounding |
+| [Lab 4 — Reflection Architecture](lab4-reflection.md) | 30 min | A single draft is unchecked and may miss criteria | Generate, evaluate, and refine with bounded iteration |
+| [Lab 5 — Planning Architecture](lab5-planning.md) | 40 min | Multi-step goals need more than one prompt | AI-generated plans validated and executed by controlled Java code |
 
-## Purpose and outcomes
+Total lab time is about 160 minutes within the four-hour workshop.
 
-### Lab 1: Hello World
+## Learning progression
 
-Establish the model integration boundary and a simple, deterministic DAG workflow. *Outcome:* a CDI-managed AI service that returns structured recommendations, with the Java application controlling the execution path.
-
-### Lab 2: Memory
-
-Provide application-managed conversational context per session. *Outcome:* a conversation-aware assistant with bounded, session-isolated chat memory.
-
-### Lab 3: Annotations
-
-Replace manual prompt code with declarative services. *Outcome:* an injectable AI service with prompts and tools.
-
-### Lab 4: RAG
-
-Ground answers in business knowledge. *Outcome:* retrieval of relevant context to improve responses.
-
-### Lab 5: Planning
-
-Combine AI reasoning with deterministic control. *Outcome:* validated structured plans executed safely.
+The order is an educational progression, not a strict ranking of AI autonomy. Memory and RAG manage **context**. Reflection adds **feedback-driven iteration**. Planning adds a degree of **model-driven orchestration**. See the [homepage diagram](../index.md#architecture-progression).
 
 ## Recommended order
 
-Complete the labs sequentially; each one extends the previous. Total estimated time: about 160 minutes of lab work within the four-hour workshop.
+Complete the labs sequentially; each one builds on the previous. Annotations and declarative AI Services are used throughout and summarized in [Next Steps](../next-steps.md).
 
-!!! note
-    The Java implementations are not yet available. Each lab page currently describes the concept and structure; code and verified results will be added later.
+!!! note "Tutorial status"
+    Labs 1 and 2 are complete step-by-step tutorials. Labs 3, 4, and 5 are under development and currently describe the concept and structure only.
