@@ -57,7 +57,7 @@ Each lab has its own package under `src/main/java/os/expert/`:
 |`os.expert.lab5` |Planning Architecture
 |===
 
-NOTE: Labs 1 and 2 are complete tutorials; Labs 3-5 are under development.
+NOTE: Labs 1 to 4 are complete tutorials; Lab 5 is under development.
 
 === Lab 0: Configuration Check
 
