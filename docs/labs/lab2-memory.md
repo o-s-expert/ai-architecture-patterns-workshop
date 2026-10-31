@@ -63,6 +63,7 @@ Previous messages become available to future requests that use the same session 
 - Completed [Lab 1](lab1-hello-world.md)
 - A working `.env` with `GEMINI_API_KEY` and the model configuration from [Getting Started](../getting-started.md)
 - Familiarity with CDI producers and injection
+- The repository cloned, with `src/main/java/os/expert/lab2/` ready for your classes (it may contain only `package-info.java`)
 
 The project already declares LangChain4j, the Gemini integration, CDI, and Weld SE, so this lab needs no new dependencies. The chat model is the same CDI bean configured in `microprofile-config.properties`.
 
@@ -114,7 +115,7 @@ Memory does not automatically make an application autonomous.
 
 ## Step-by-step implementation
 
-All classes go in the package `os.expert.lab2`.
+You will create four classes, all in the package `os.expert.lab2`. In IntelliJ, right-click the package → **New → Java Class**. Each listing below is complete, including its package declaration and imports.
 
 1. **Define the session-aware AI interface** — `SessionAwareAgent`
 2. **Choose a memory strategy** — `ChatMemoryProvider`
@@ -124,9 +125,9 @@ All classes go in the package `os.expert.lab2`.
 
 ### Step 1 — Define the session-aware AI interface
 
-**Why?** The service needs to know which conversation each message belongs to. **Problem solved:** without an identifier, all users would end up in one shared history. **We will implement** a declarative AI service interface, exactly as in Lab 1, with one extra parameter.
+**Why?** The service needs to know which conversation each message belongs to. **Problem solved:** without an identifier, all users would end up in one shared history. **We will implement** a declarative AI service interface, like in Lab 1, with one extra parameter.
 
-Create `src/main/java/os/expert/lab2/SessionAwareAgent.java`:
+Inside `os.expert.lab2`, create a new Java interface named `SessionAwareAgent` at `src/main/java/os/expert/lab2/SessionAwareAgent.java`:
 
 ```java
 package os.expert.lab2;
@@ -168,9 +169,9 @@ You will place this provider inside the factory in the next step.
 
 ### Step 3 — Create the CDI AI service factory
 
-**Why?** Lab 1 had the AI service registered by annotations. Here we need to supply the memory, so we assemble the service ourselves. **Problem solved:** connecting the chat model, the memory provider, and the interface, and exposing the result to CDI. **We will implement** a CDI bean with a producer method.
+**Why?** In Lab 1, `@RegisterAIService` let the CDI extension build the service. Here we need to supply a memory provider, so we assemble the service ourselves with `AiServices.builder()` and expose it through a CDI producer. **Problem solved:** connecting the chat model, the memory provider, and the interface, and exposing the result to CDI. **We will implement** a CDI bean with a producer method.
 
-Create `src/main/java/os/expert/lab2/SessionAgentFactory.java`:
+Inside `os.expert.lab2`, create a class named `SessionAgentFactory` at `src/main/java/os/expert/lab2/SessionAgentFactory.java`:
 
 ```java
 package os.expert.lab2;
@@ -245,7 +246,7 @@ return AiServices.builder(SessionAwareAgent.class)
 
 **Why?** We want to see isolation, not just assume it. **Problem solved:** proving that the right history is used for the right session. **We will implement** a CDI bean that sends messages for two different session IDs.
 
-Create `src/main/java/os/expert/lab2/ChatEndpoint.java`:
+Inside `os.expert.lab2`, create a class named `ChatEndpoint` at `src/main/java/os/expert/lab2/ChatEndpoint.java`:
 
 ```java
 package os.expert.lab2;
@@ -292,7 +293,7 @@ It also shows isolation only indirectly: the answer is correct for Alice, and Bo
 
 **Why?** Nothing runs yet. **Problem solved:** starting the container so CDI can create the beans and wire them together. **We will implement** a Java SE entry point, as in Lab 1.
 
-Create `src/main/java/os/expert/lab2/AgentApp.java`:
+Inside `os.expert.lab2`, create a class named `AgentApp` at `src/main/java/os/expert/lab2/AgentApp.java`:
 
 ```java
 package os.expert.lab2;
@@ -326,12 +327,15 @@ public class AgentApp {
 2. Verify the project SDK is Java 21.
 3. Make sure `.env` in the repository root contains your `GEMINI_API_KEY` (see [Getting Started](../getting-started.md)). Never commit it.
 4. Make sure the model in `microprofile-config.properties` is available to your key. A 404 or timeout means you should pick another model.
-5. Run `os.expert.lab2.AgentApp` with the working directory set to the repository root, so `.env` is found.
-6. Read the console output.
+5. Open `AgentApp` and click the green run icon next to `main`, or choose **Run → Run 'AgentApp.main()'**.
+6. In the run configuration, set the working directory to the repository root (`$PROJECT_DIR$`), so `.env` is found.
+7. Read the console output.
 
 The POM does not configure an exec plugin, so there is no `mvn exec:java` command. To build from a terminal, run `mvn clean verify`.
 
 ## Expected results
+
+The sample simulates different sessions by sending their messages one after another; the requests do not run concurrently.
 
 The program prints one answer: the reply to Alice's membership question. Different sessions keep independent context, so the answer should mention the **Premium** level that Alice stated, and not Bob's free tier.
 
