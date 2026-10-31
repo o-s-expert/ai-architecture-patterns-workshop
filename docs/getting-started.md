@@ -13,7 +13,7 @@ Prepare your environment before starting the labs. This takes about 15–20 minu
 
 | Tool | Purpose |
 |---|---|
-| Java Development Kit (JDK) | Compile and run the labs. Use the version specified in the project build files once available. |
+| Java Development Kit (JDK) | Java 21 or newer is required to compile and run the labs. |
 | Apache Maven | Build and dependency management |
 | IntelliJ IDEA (or another Java IDE) | Development environment |
 | Git | Clone the repository |

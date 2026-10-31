@@ -14,7 +14,7 @@ The workshop (about 4 hours) explores key AI architecture patterns through five 
 
 == Technology Stack
 
-* Java and Maven
+* Java 21 and Apache Maven
 * CDI and MicroProfile
 * LangChain4j
 * Google Gemini
@@ -34,6 +34,48 @@ The workshop (about 4 hours) explores key AI architecture patterns through five 
 |===
 
 NOTE: The Java lab implementations will be added under `src/main/java/`.
+
+== Maven Project
+
+The project is a single-module Maven build (`os.expert:ai-architecture-patterns-workshop`) that targets *Java 21* and runs on Java SE through CDI, without an application server.
+
+* *LangChain4j* (AI Services, memory, structured outputs, tools, RAG) and the *Google Gemini* integration
+* *CDI* with *Weld SE*, plus the LangChain4j CDI portable extension
+* *MicroProfile Config* (SmallRye Config) configured in `src/main/resources/META-INF/microprofile-config.properties`
+* A local embedding model and in-memory embedding store for the RAG lab, so no database is required
+
+Each lab has its own package under `src/main/java/os/expert/`:
+
+[cols="1,2"]
+|===
+|Package |Lab
+
+|`os.expert.lab1` |Hello World
+|`os.expert.lab2` |Conversational Memory
+|`os.expert.lab3` |AI Services and Annotations
+|`os.expert.lab4` |Retrieval-Augmented Generation
+|`os.expert.lab5` |Planning Pattern
+|===
+
+WARNING: The Java exercises have not been implemented yet; the packages currently contain only `package-info.java` files.
+
+=== Gemini API Key
+
+Obtain a key from https://aistudio.google.com/api-keys[Google AI Studio] and expose it as an environment variable. Never commit it.
+
+[source,bash]
+----
+export GEMINI_API_KEY="YOUR_API_KEY"
+----
+
+The Gemini model name is configurable through `gemini.model-name` in `microprofile-config.properties`.
+
+=== Build
+
+[source,bash]
+----
+mvn clean verify
+----
 
 == Documentation Development
 
