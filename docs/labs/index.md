@@ -20,7 +20,7 @@ Five hands-on labs build on a shared scenario and project structure. All exercis
 
 ### Lab 1: Hello World
 
-Establish the model integration boundary. *Outcome:* a CDI-managed chat model that answers a prompt.
+Establish the model integration boundary and a simple, deterministic DAG workflow. *Outcome:* a CDI-managed AI service that returns structured recommendations, with the Java application controlling the execution path.
 
 ### Lab 2: Memory
 
