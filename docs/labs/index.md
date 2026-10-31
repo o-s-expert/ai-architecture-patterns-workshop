@@ -24,7 +24,7 @@ Establish the model integration boundary and a simple, deterministic DAG workflo
 
 ### Lab 2: Memory
 
-Maintain conversations across requests. *Outcome:* multi-turn dialogue with per-session isolation.
+Provide application-managed conversational context per session. *Outcome:* a conversation-aware assistant with bounded, session-isolated chat memory.
 
 ### Lab 3: Annotations
 
