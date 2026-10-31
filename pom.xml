@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>os.expert</groupId>
+    <artifactId>ai-architecture-patterns-workshop</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>AI Architecture Patterns Workshop</name>
+    <description>Hands-on workshop implementing AI architecture patterns with Enterprise Java, LangChain4j, CDI, and Google Gemini.</description>
+    <url>https://github.com/O-S-Expert/ai-architecture-patterns-workshop</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>21</maven.compiler.release>
+
+        <!-- LangChain4j CDI 1.5.1 is built against LangChain4j 1.22.0; keep them aligned. -->
+        <langchain4j.version>1.22.0</langchain4j.version>
+        <langchain4j-embeddings.version>1.22.0-beta32</langchain4j-embeddings.version>
+        <langchain4j-cdi.version>1.5.1</langchain4j-cdi.version>
+
+        <weld.version>6.0.4.Final</weld.version>
+        <jakarta-cdi.version>4.1.0</jakarta-cdi.version>
+        <smallrye-config.version>3.18.3</smallrye-config.version>
+
+        <junit.version>6.1.3</junit.version>
+        <mockito.version>5.24.0</mockito.version>
+        <assertj.version>3.27.7</assertj.version>
+
+        <maven-compiler-plugin.version>3.16.0</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>3.6.1</maven-surefire-plugin.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>dev.langchain4j</groupId>
+                <artifactId>langchain4j-bom</artifactId>
+                <version>${langchain4j.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>${junit.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- LangChain4j: AI Services, memory, structured outputs, tools, RAG, in-memory embedding store -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j</artifactId>
+        </dependency>
+        <!-- Google Gemini -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-google-ai-gemini</artifactId>
+        </dependency>
+        <!-- Local embedding model for the RAG lab (no external service or database) -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-embeddings-all-minilm-l6-v2</artifactId>
+            <version>${langchain4j-embeddings.version}</version>
+        </dependency>
+
+        <!-- LangChain4j CDI -->
+        <dependency>
+            <groupId>dev.langchain4j.cdi</groupId>
+            <artifactId>langchain4j-cdi-portable-ext</artifactId>
+            <version>${langchain4j-cdi.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>dev.langchain4j.cdi.mp</groupId>
+            <artifactId>langchain4j-cdi-config</artifactId>
+            <version>${langchain4j-cdi.version}</version>
+        </dependency>
+
+        <!-- CDI runtime for Java SE -->
+        <dependency>
+            <groupId>jakarta.enterprise</groupId>
+            <artifactId>jakarta.enterprise.cdi-api</artifactId>
+            <version>${jakarta-cdi.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.weld.se</groupId>
+            <artifactId>weld-se-core</artifactId>
+            <version>${weld.version}</version>
+        </dependency>
+
+        <!-- MicroProfile Config implementation (brings the MicroProfile Config API) -->
+        <dependency>
+            <groupId>io.smallrye.config</groupId>
+            <artifactId>smallrye-config</artifactId>
+            <version>${smallrye-config.version}</version>
+        </dependency>
+
+        <!-- Test -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
