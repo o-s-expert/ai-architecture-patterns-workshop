@@ -59,16 +59,33 @@ Each lab has its own package under `src/main/java/os/expert/`:
 
 WARNING: The Java exercises have not been implemented yet; the packages currently contain only `package-info.java` files.
 
-=== Gemini API Key
+=== Lab 0: Configuration Check
 
-Obtain a key from https://aistudio.google.com/api-keys[Google AI Studio] and expose it as an environment variable. Never commit it.
+`os.expert.lab0.App` is a standalone Java SE entry point that verifies the setup end to end: Weld SE starts, LangChain4j CDI registers the declarative `AssistantService`, and Gemini answers two prompts. It has no REST endpoint or web server.
 
+==== Gemini API Key
+
+. Create a key in https://aistudio.google.com/api-keys[Google AI Studio].
+. Copy the template and edit it. `.env` is ignored by Git; never commit it.
++
 [source,bash]
 ----
-export GEMINI_API_KEY="YOUR_API_KEY"
+cp .env.example .env
+# then set GEMINI_API_KEY in .env
 ----
 
-The Gemini model name is configurable through `gemini.model-name` in `microprofile-config.properties`.
+SmallRye Config reads `.env` from the working directory, so run from the repository root. A real `GEMINI_API_KEY` environment variable takes precedence over the file. The model is configured in `microprofile-config.properties` (currently `gemini-3.5-flash`).
+
+==== Run from IntelliJ IDEA
+
+Open the project as a Maven project with a Java 21 SDK, then use the shared run configuration *Lab0 App* (main class `os.expert.lab0.App`, working directory `$PROJECT_DIR$`).
+
+==== Common errors
+
+* *HTTP 400/403 or "API key not valid"*: `GEMINI_API_KEY` is missing, a placeholder, or wrong; check `.env`.
+* *`.env` not loaded*: the working directory is not the repository root.
+* *HTTP 404 for a model*: the model is not available to your key (for example `gemini-2.5-flash` for new users). List models with the `models` API and update `model-name`.
+* *HTTP 429/503 or "request timed out"*: rate limit or high demand on that model; retry later or try another model. Weld startup takes about a second, so long delays come from the API request.
 
 === Build
 
