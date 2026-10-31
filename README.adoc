@@ -30,7 +30,7 @@ The workshop (about 4 hours) explores key AI architecture patterns through five 
 |2 |Conversational Memory |25 min |Context and session isolation.
 |3 |Retrieval-Augmented Generation |45 min |External knowledge and grounding.
 |4 |Reflection Architecture |30 min |Generate, evaluate, refine.
-|5 |Planning Architecture |40 min |AI-generated plans and controlled execution.
+|5 |Planning Architecture |40 min |Model-directed tool calling for customer support.
 |===
 
 NOTE: Participants create the lab classes themselves from the step-by-step tutorials; the instructor reference implementations are not published.
@@ -57,7 +57,7 @@ Each lab has its own package under `src/main/java/os/expert/`:
 |`os.expert.lab5` |Planning Architecture
 |===
 
-NOTE: Labs 1 to 4 are complete tutorials; Lab 5 is under development.
+NOTE: All five labs are complete tutorials. Lab 5 implements model-directed tool calling, not plan-first planning.
 
 === Lab 0: Configuration Check
 
