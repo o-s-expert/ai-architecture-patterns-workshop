@@ -42,11 +42,11 @@ nav:
   - Getting Started: getting-started.md
   - Labs:
       - Overview: labs/index.md
-      - "Lab 1: Hello World": labs/lab1-hello-world.md
-      - "Lab 2: Memory": labs/lab2-memory.md
-      - "Lab 3: Annotations": labs/lab3-annotations.md
-      - "Lab 4: RAG": labs/lab4-rag.md
-      - "Lab 5: Planning": labs/lab5-planning.md
+      - "Lab 1 — DAG: Book Recommendations": labs/lab1-hello-world.md
+      - "Lab 2 — Conversational Memory": labs/lab2-memory.md
+      - "Lab 3 — Retrieval-Augmented Generation": labs/lab3-rag.md
+      - "Lab 4 — Reflection Architecture": labs/lab4-reflection.md
+      - "Lab 5 — Planning Architecture": labs/lab5-planning.md
   - Next Steps: next-steps.md
   - About: about.md
 
