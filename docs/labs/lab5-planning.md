@@ -1,6 +1,6 @@
-# Lab 5: Planning
+# Lab 5 — Planning Architecture
 
-<span class="lab-meta">Duration: 45 minutes · Enterprise Java · LangChain4j · CDI</span>
+<span class="lab-meta">Duration: 40 minutes · Enterprise Java · LangChain4j · CDI</span>
 
 ## Introduction
 
@@ -30,7 +30,7 @@ User Goal → AI Planner → Structured Plan → Validation → Deterministic Ex
 
 ## Prerequisites
 
-- Completed [Lab 4](lab4-rag.md)
+- Completed [Lab 4](lab4-reflection.md)
 - Understanding of the tools and services from earlier labs
 
 ## Step-by-step implementation
@@ -40,20 +40,20 @@ User Goal → AI Planner → Structured Plan → Validation → Deterministic Ex
 3. **Validate** — check actions, parameters, and policies.
 4. **Execute** — run validated steps deterministically and report the result.
 
-!!! note "Implementation pending"
-    The Java sources for this lab are not available yet. Detailed instructions, code listings, and commands will be added once the lab implementation is verified against the actual dependencies and framework APIs.
+!!! note "Under development"
+    The step-by-step tutorial for this lab is being written. A lab that only lets the model call tools is tool calling, not explicit planning; this lab will cover a separate, validated plan.
 
 ## Running the lab
 
-!!! note "Implementation pending"
-    Run instructions will be documented after the lab code is added to the repository.
+!!! note "Under development"
+    Run instructions will be published with the tutorial.
 
 ## Expected results
 
 A goal should produce a validated plan and a deterministic execution result; invalid plans should be rejected. Verified results will be documented later.
 
-!!! note "Implementation pending"
-    Verified sample output will be published with the implementation.
+!!! note "Under development"
+    Verified results will be published with the tutorial.
 
 ## Architectural trade-offs
 
