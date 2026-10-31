@@ -25,6 +25,52 @@ The **model integration boundary** is the single place where your application ta
 Client → Application service → ChatModel (CDI bean) → Gemini API
 ```
 
+## Architecture: A Deterministic DAG Workflow
+
+**DAG** stands for *Directed Acyclic Graph*:
+
+- **Directed:** execution follows a defined direction, from one step to the next.
+- **Acyclic:** the workflow contains no control-flow cycles; it never loops back to an earlier step.
+- **Graph:** components and operations are connected through dependencies.
+
+The Lab 1 book recommendation application is a simple DAG. The developer defines the execution path:
+
+1. Start the Java application (`BookApp`).
+2. Create the `BookRequest`.
+3. Invoke the CDI-managed AI service (`NextReadBookService`).
+4. Send the request to Gemini through LangChain4j.
+5. Receive structured recommendations.
+6. Display the results.
+7. Finish execution.
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#F8F7F7", "primaryBorderColor": "#019DDC", "primaryTextColor": "#1D5183", "lineColor": "#1D5183", "fontFamily": "Montserrat, sans-serif"}}}%%
+flowchart TD
+    A["BookApp: Start"] --> B["Create BookRequest"]
+    B --> C["NextReadBookService"]
+    C --> D["LangChain4j AI Service"]
+    D --> E["Google Gemini"]
+    E --> F["Structured Recommendations"]
+    F --> G["NextReadBooks"]
+    G --> H["Display Recommendations"]
+    H --> I["End"]
+
+    classDef app fill:#F8F7F7,stroke:#1D5183,color:#1D5183,stroke-width:2px;
+    classDef ai fill:#019DDC,stroke:#1D5183,color:#FFFFFF,stroke-width:2px;
+    class A,B,C,G,H,I app;
+    class D,E,F ai;
+```
+
+Every arrow points forward and no arrow returns to an earlier node, so the graph is acyclic.
+
+The model generates content, but it does not decide which application step runs next. Orchestration is **deterministic** and owned by the Java code; the content of the recommendations is **probabilistic** and comes from the model.
+
+### Why start with a DAG?
+
+A deterministic workflow provides predictable execution, explicit responsibilities, straightforward debugging, and clear integration boundaries. The AI model is responsible for generating recommendations, while the Java application remains responsible for orchestration.
+
+The recommendations can vary between executions, even though the Java workflow follows the same predefined sequence every time. This is an important starting point before exploring more autonomous architecture patterns.
+
 ## Prerequisites
 
 - Completed [Getting Started](../getting-started.md)
