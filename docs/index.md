@@ -7,12 +7,14 @@ hide:
 <div class="os-hero">
 <div>
 <p class="os-eyebrow">HANDS-ON WORKSHOP</p>
-<h1>AI Architecture Patterns with Enterprise Java</h1>
-<p class="os-lead">A practical workshop exploring how to integrate AI capabilities into enterprise applications using LangChain4j and CDI. Learn key architectural patterns through hands-on labs, from basic LLM integration to planning workflows.</p>
+<h1>Implementing AI Architecture Patterns with Enterprise Java</h1>
+<p class="os-lead"><strong>From Deterministic Workflows to AI-Driven Decisions</strong></p>
+<p class="os-lead">Explore how to design and implement AI-powered applications using Enterprise Java, LangChain4j, CDI, and Google Gemini. Through five hands-on labs, learn how deterministic orchestration evolves into context-aware, retrieval-enhanced, reflective, and planning-based AI systems.</p>
 <ul class="os-meta">
 <li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h2M12 14h2M8 17h2"/></svg><div><strong>4 hours</strong><span>Hands-on workshop</span></div></li>
-<li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 5l-4 14"/></svg><div><strong>Enterprise Java</strong><span>LangChain4j + CDI</span></div></li>
-<li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 6 1V4a3 3 0 0 0-3 0zM15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-6 1"/></svg><div><strong>5 practical labs</strong><span>From basics to planning</span></div></li>
+<li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 5l-4 14"/></svg><div><strong>Java 21</strong><span>LangChain4j + CDI</span></div></li>
+<li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 6 1V4a3 3 0 0 0-3 0zM15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-6 1"/></svg><div><strong>Five hands-on labs</strong><span>From DAG to planning</span></div></li>
+<li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l2.2 5.8L20 11l-5.8 2.2L12 19l-2.2-5.8L4 11l5.8-2.2z"/></svg><div><strong>Google Gemini</strong><span>The LLM used in every lab</span></div></li>
 </ul>
 </div>
 <div class="os-illustration"><svg viewBox="0 0 500 320" role="img" aria-label="Illustration: AI and Enterprise Java integration">
@@ -39,16 +41,34 @@ hide:
 <div class="os-benefit"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="7" r="3"/><circle cx="4.5" cy="10" r="2.2"/><circle cx="19.5" cy="10" r="2.2"/><path d="M6 20c0-3.5 2.7-6 6-6s6 2.5 6 6M1 18c0-2.3 1.5-4 3.5-4M23 18c0-2.3-1.5-4-3.5-4"/></svg><div><h3>Architectural Insights</h3><p>Understand trade-offs and design decisions.</p></div></div>
 </div>
 
-<h2 class="os-section-title" id="the-labs">The Labs</h2>
-<p class="os-section-sub">A progressive journey through AI architecture patterns, from basic integration to planning workflows.</p>
+<h2 class="os-section-title" id="the-learning-journey">The Learning Journey</h2>
+<p class="os-section-sub">Five labs, one progression: <strong>DAG → Memory → RAG → Reflection → Planning</strong>.</p>
 
 <div class="os-cards">
-<a class="os-card" href="labs/lab1-hello-world/"><div class="os-card-head"><span class="os-num">1</span><span class="os-card-title"><strong>Hello World</strong><span>20 min</span></span><span class="os-arrow" aria-hidden="true">→</span></div><p>Connect Enterprise Java to an LLM using CDI and LangChain4j.</p><div class="os-card-art" aria-hidden="true"><svg viewBox="0 0 32 30" aria-hidden="true" focusable="false"><rect x="3" y="6" width="26" height="18" rx="3"/><path d="M3 11h26M9 17l4 3-4 3M16 22h6"/></svg></div></a>
-<a class="os-card" href="labs/lab2-memory/"><div class="os-card-head"><span class="os-num">2</span><span class="os-card-title"><strong>Memory</strong><span>25 min</span></span><span class="os-arrow" aria-hidden="true">→</span></div><p>Add conversational memory and session isolation.</p><div class="os-card-art" aria-hidden="true"><svg viewBox="0 0 38 30" aria-hidden="true" focusable="false"><rect x="2" y="5" width="18" height="12" rx="3"/><path d="M6 17v4l4-4M9 11h.01M12 11h.01M15 11h.01M24 9c0-1.7 3-3 6-3s6 1.3 6 3v14c0 1.7-3 3-6 3s-6-1.3-6-3zM24 9c0 1.7 3 3 6 3s6-1.3 6-3M24 16c0 1.7 3 3 6 3s6-1.3 6-3"/></svg></div></a>
-<a class="os-card" href="labs/lab3-annotations/"><div class="os-card-head"><span class="os-num">3</span><span class="os-card-title"><strong>Annotations</strong><span>25 min</span></span><span class="os-arrow" aria-hidden="true">→</span></div><p>Use declarative AI services, prompts, and tools.</p><div class="os-card-art" aria-hidden="true"><svg viewBox="0 0 30 32" aria-hidden="true" focusable="false"><rect x="4" y="3" width="22" height="26" rx="3"/><circle cx="15" cy="13" r="3.5"/><path d="M18.5 13v1.5a2 2 0 0 0 4 0V13a7.5 7.5 0 1 0-3 6M9 23h12"/></svg></div></a>
-<a class="os-card" href="labs/lab4-rag/"><div class="os-card-head"><span class="os-num">4</span><span class="os-card-title"><strong>RAG</strong><span>45 min</span></span><span class="os-arrow" aria-hidden="true">→</span></div><p>Retrieve business knowledge and ground responses.</p><div class="os-card-art" aria-hidden="true"><svg viewBox="0 0 52 30" aria-hidden="true" focusable="false"><path d="M3 4h12l5 5v18H3zM15 4v5h5M7 14h9M7 19h9M7 23h6M26 16h6M30 13l3 3-3 3M36 8c0-1.7 3-3 6-3s6 1.3 6 3v14c0 1.7-3 3-6 3s-6-1.3-6-3zM36 8c0 1.7 3 3 6 3s6-1.3 6-3"/></svg></div></a>
-<a class="os-card" href="labs/lab5-planning/"><div class="os-card-head"><span class="os-num">5</span><span class="os-card-title"><strong>Planning</strong><span>45 min</span></span><span class="os-arrow" aria-hidden="true">→</span></div><p>Generate, validate, and execute a structured plan.</p><div class="os-card-art" aria-hidden="true"><svg viewBox="0 0 50 32" aria-hidden="true" focusable="false"><rect x="3" y="4" width="14" height="9" rx="2"/><path d="M10 13v4M3 24l5-5 5 5-5 5zM13 24h6M25 24l5-5 5 5-5 5zM35 24h6M41 20h6v8h-6z"/></svg></div></a>
+<a class="os-card" href="labs/lab1-hello-world/"><div class="os-card-head"><span class="os-num">1</span><span class="os-card-title"><strong>DAG: AI Book Recommendations</strong><span>20 min</span></span><span class="os-arrow" aria-hidden="true">→</span></div><p>Build an AI-powered book recommendation application using CDI-managed AI Services and structured Java responses. Learn how a deterministic Java workflow can integrate probabilistic model output.</p><div class="os-card-art" aria-hidden="true"><svg viewBox="0 0 32 30" aria-hidden="true" focusable="false"><rect x="3" y="6" width="26" height="18" rx="3"/><path d="M3 11h26M9 17l4 3-4 3M16 22h6"/></svg></div></a>
+<a class="os-card" href="labs/lab2-memory/"><div class="os-card-head"><span class="os-num">2</span><span class="os-card-title"><strong>Conversational Memory</strong><span>25 min</span></span><span class="os-arrow" aria-hidden="true">→</span></div><p>Build a session-aware conversational assistant using <code>ChatMemoryProvider</code>, <code>@MemoryId</code>, and bounded message history. Understand state management and conversation isolation.</p><div class="os-card-art" aria-hidden="true"><svg viewBox="0 0 38 30" aria-hidden="true" focusable="false"><rect x="2" y="5" width="18" height="12" rx="3"/><path d="M6 17v4l4-4M9 11h.01M12 11h.01M15 11h.01M24 9c0-1.7 3-3 6-3s6 1.3 6 3v14c0 1.7-3 3-6 3s-6-1.3-6-3zM24 9c0 1.7 3 3 6 3s6-1.3 6-3M24 16c0 1.7 3 3 6 3s6-1.3 6-3"/></svg></div></a>
+<a class="os-card" href="labs/lab3-rag/"><div class="os-card-head"><span class="os-num">3</span><span class="os-card-title"><strong>Retrieval-Augmented Generation</strong><span>45 min</span></span><span class="os-arrow" aria-hidden="true">→</span></div><p>Build a retrieval-enhanced application that uses external documents to provide relevant context to an LLM. Explore document ingestion, embeddings, retrieval, and grounding.</p><div class="os-card-art" aria-hidden="true"><svg viewBox="0 0 52 30" aria-hidden="true" focusable="false"><path d="M3 4h12l5 5v18H3zM15 4v5h5M7 14h9M7 19h9M7 23h6M26 16h6M30 13l3 3-3 3M36 8c0-1.7 3-3 6-3s6 1.3 6 3v14c0 1.7-3 3-6 3s-6-1.3-6-3zM36 8c0 1.7 3 3 6 3s6-1.3 6-3"/></svg></div></a>
+<a class="os-card" href="labs/lab4-reflection/"><div class="os-card-head"><span class="os-num">4</span><span class="os-card-title"><strong>Reflection Architecture</strong><span>30 min</span></span><span class="os-arrow" aria-hidden="true">→</span></div><p>Build an AI-powered recommendation system that generates, evaluates, and refines its own output. Learn about feedback loops, evaluation criteria, bounded iterations, and the limitations of LLM-based evaluation.</p><div class="os-card-art" aria-hidden="true"><svg viewBox="0 0 34 30" aria-hidden="true" focusable="false"><path d="M6 12a11 9 0 0 1 20-3M26 5v5h-5M28 18a11 9 0 0 1-20 3M8 25v-5h5"/></svg></div></a>
+<a class="os-card" href="labs/lab5-planning/"><div class="os-card-head"><span class="os-num">5</span><span class="os-card-title"><strong>Planning Architecture</strong><span>40 min</span></span><span class="os-arrow" aria-hidden="true">→</span></div><p>Explore how AI systems can propose multi-step plans while Enterprise Java validates and controls their execution. Distinguish model-driven planning from deterministic workflow orchestration.</p><div class="os-card-art" aria-hidden="true"><svg viewBox="0 0 50 32" aria-hidden="true" focusable="false"><rect x="3" y="4" width="14" height="9" rx="2"/><path d="M10 13v4M3 24l5-5 5 5-5 5zM13 24h6M25 24l5-5 5 5-5 5zM35 24h6M41 20h6v8h-6z"/></svg></div></a>
 </div>
+
+## Architecture progression
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"primaryColor": "#F8F7F7", "primaryBorderColor": "#019DDC", "primaryTextColor": "#1D5183", "lineColor": "#1D5183", "fontFamily": "Montserrat, sans-serif"}}}%%
+flowchart LR
+    A["Lab 1<br/>DAG"] --> B["Lab 2<br/>Memory"]
+    B --> C["Lab 3<br/>RAG"]
+    C --> D["Lab 4<br/>Reflection"]
+    D --> E["Lab 5<br/>Planning"]
+
+    classDef ctx fill:#F8F7F7,stroke:#1D5183,color:#1D5183,stroke-width:2px;
+    classDef ctrl fill:#019DDC,stroke:#1D5183,color:#FFFFFF,stroke-width:2px;
+    class A,B,C ctx;
+    class D,E ctrl;
+```
+
+The diagram shows the **educational progression** of the workshop, not a strict universal ranking of AI autonomy. Memory and RAG are **context-management** techniques: they change what the model sees, while the Java code still controls the flow. Reflection introduces **feedback-driven iteration**, and Planning introduces a degree of **model-driven orchestration**.
 
 <div class="os-cta">
 <div style="display:flex;gap:.9rem;align-items:center"><span class="os-meta"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2c4 2 6 6 6 10l-3 3h-6l-3-3c0-4 2-8 6-10zM9 15l-3 5 4-2M15 15l3 5-4-2"/><circle cx="12" cy="9" r="1.6"/></svg></span><div><h2>Ready to get started?</h2><p>Set up your environment and obtain your Gemini API key.</p></div></div>
