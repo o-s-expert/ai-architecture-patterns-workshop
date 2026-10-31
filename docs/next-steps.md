@@ -28,6 +28,10 @@ Trade-offs to keep in mind:
 
 ## Additional architecture patterns
 
+### Advanced RAG and Vector Databases
+
+Lab 3 uses a local embedding model and an in-memory store. To see how the same architecture extends to persistent enterprise data, read [Introduction to Retrieval-Augmented Generation with Java and MongoDB](https://foojay.io/today/introduction-to-retrieval-augmented-generation-with-java-and-mongodb/), which builds an HR policy RAG application with Java, LangChain4j, CDI, and MongoDB Atlas. It is optional reading; it does not replace or extend the Lab 3 exercise.
+
 ### Reflection
 
 Use evaluation and refinement loops to improve generated outputs: a model (or a separate evaluator) critiques a draft against criteria, and the result is revised. It builds on [Lab 1](labs/lab1-hello-world.md) services and [Lab 5](labs/lab5-planning.md) validation.
