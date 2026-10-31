@@ -26,6 +26,7 @@ The labs use **LangChain4j** and **CDI**; their dependencies are managed by Mave
 ```bash
 git clone https://github.com/O-S-Expert/ai-architecture-patterns-workshop.git
 cd ai-architecture-patterns-workshop
+mvn clean install
 ```
 
 ## 4. Open the project in IntelliJ IDEA
