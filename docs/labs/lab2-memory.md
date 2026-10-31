@@ -394,4 +394,4 @@ Think about:
 
 ---
 
-[Back to Lab 1](lab1-hello-world.md) · [Continue to Lab 3](lab3-annotations.md)
+[Back to Lab 1](lab1-hello-world.md) · [Continue to Lab 3](lab3-rag.md)
