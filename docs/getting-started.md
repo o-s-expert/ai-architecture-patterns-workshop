@@ -44,23 +44,19 @@ mvn clean install
 Eligible participants can use Gemini's free API tier without a credit card, subject to provider availability and rate limits.
 
 !!! warning "Never commit credentials"
-    Do not place your API key in source files, configuration committed to Git, or screenshots. Use environment variables.
+    Do not place your API key in source files, configuration committed to Git, or screenshots. Keep it in the git-ignored `.env` file or in environment variables.
 
-## 6. Configure environment variables
+## 6. Configure the API key
 
-=== "macOS / Linux"
+Copy the template and set your key in the local `.env` file at the repository root. It is ignored by Git.
 
-    ```bash
-    export GEMINI_API_KEY="YOUR_API_KEY"
-    ```
+```bash
+cp .env.example .env
+# edit .env:
+# GEMINI_API_KEY=your-gemini-api-key
+```
 
-=== "Windows PowerShell"
-
-    ```powershell
-    $env:GEMINI_API_KEY = "YOUR_API_KEY"
-    ```
-
-These settings apply to the current terminal session. If you start the application from IntelliJ IDEA, define the variable in the run configuration as well.
+SmallRye Config reads `.env` from the working directory, so start the application from the repository root. A real `GEMINI_API_KEY` environment variable, if set, takes precedence over the file.
 
 ## 7. Verify the environment
 
@@ -72,21 +68,25 @@ mvn -version
 git --version
 ```
 
-Confirm the key is set (without printing it):
+Build the project:
 
 ```bash
-test -n "$GEMINI_API_KEY" && echo "GEMINI_API_KEY is set"
+mvn clean verify
 ```
 
-!!! note "Pending"
-    Verification of the application itself (build commands, endpoints, and sample calls) depends on Java code that has not been added yet and will be documented with Lab 1.
+Run **Lab 0**, a configuration check, from IntelliJ IDEA: open `os.expert.lab0.App` and run its `main` method (working directory: the repository root). It starts Weld SE, registers `AssistantService`, and asks Gemini two questions. The first answer should be *Paris*.
+
+!!! note
+    Lab 0 uses `gemini-3.5-flash`, configured in `src/main/resources/META-INF/microprofile-config.properties`. If a model returns HTTP 404 or times out, pick another model available to your key.
 
 ## 8. Troubleshooting
 
 | Symptom | Suggestion |
 |---|---|
 | `java` or `mvn` not found | Verify installation and that the tools are on your `PATH`. |
-| API key not detected | Set it in the same terminal or IDE run configuration used to start the app. |
+| API key not detected | Check `.env` exists in the repository root and the app is started from that directory. |
+| HTTP 404 for a model | The model is unavailable to your key; change `model-name` in `microprofile-config.properties`. |
+| HTTP 429/503 or request timeout | Rate limit or high demand; retry later or use another model. |
 | Authentication or quota errors | Check the key in Google AI Studio and review rate limits. |
 | Corporate proxy or firewall | Ensure access to Google's API endpoints. |
 
