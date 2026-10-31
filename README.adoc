@@ -26,14 +26,14 @@ The workshop (about 4 hours) explores key AI architecture patterns through five 
 |===
 |Lab |Title |Duration |Description
 
-|1 |Hello World |20 min |Connect Enterprise Java to an LLM using CDI and LangChain4j.
-|2 |Memory |25 min |Add conversational memory and session isolation.
-|3 |Annotations |25 min |Use declarative AI services, prompts, and tools.
-|4 |RAG |45 min |Retrieve business knowledge and ground responses.
-|5 |Planning |45 min |Generate, validate, and execute a structured plan.
+|1 |DAG: AI Book Recommendations |20 min |Deterministic workflow with AI and structured output.
+|2 |Conversational Memory |25 min |Context and session isolation.
+|3 |Retrieval-Augmented Generation |45 min |External knowledge and grounding.
+|4 |Reflection Architecture |30 min |Generate, evaluate, refine.
+|5 |Planning Architecture |40 min |AI-generated plans and controlled execution.
 |===
 
-NOTE: The Java lab implementations will be added under `src/main/java/`.
+NOTE: Participants create the lab classes themselves from the step-by-step tutorials; the instructor reference implementations are not published.
 
 == Maven Project
 
@@ -50,14 +50,14 @@ Each lab has its own package under `src/main/java/os/expert/`:
 |===
 |Package |Lab
 
-|`os.expert.lab1` |Hello World
+|`os.expert.lab1` |DAG: Book Recommendations
 |`os.expert.lab2` |Conversational Memory
-|`os.expert.lab3` |AI Services and Annotations
-|`os.expert.lab4` |Retrieval-Augmented Generation
-|`os.expert.lab5` |Planning Pattern
+|`os.expert.lab3` |Retrieval-Augmented Generation
+|`os.expert.lab4` |Reflection Architecture
+|`os.expert.lab5` |Planning Architecture
 |===
 
-WARNING: The Java exercises have not been implemented yet; the packages currently contain only `package-info.java` files.
+NOTE: Labs 1 and 2 are complete tutorials; Labs 3-5 are under development.
 
 === Lab 0: Configuration Check
 
