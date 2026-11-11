@@ -1,7 +1,7 @@
 # Anthropic Claude
 
-!!! warning "Not yet tested"
-    This configuration is built and checked offline (the right `ChatModel` class is created). No lab has been run against Claude in this workshop.
+!!! note "Tested"
+    The connection check and Labs 1 to 5 were run against `claude-opus-5-5`, `claude-sonnet-5-5` and `claude-haiku-5-5`, one run per lab and model, with LangChain4j 1.22.0 and the lab code as published in these pages. Model output varies between runs; re-check after changing the model or library version.
 
 ## 1. Why choose this provider?
 
@@ -42,13 +42,14 @@ ANTHROPIC_MODEL=your-model-id
 dev.langchain4j.cdi.plugin.chat-model.class=dev.langchain4j.model.anthropic.AnthropicChatModel
 dev.langchain4j.cdi.plugin.chat-model.config.api-key=${ANTHROPIC_API_KEY}
 dev.langchain4j.cdi.plugin.chat-model.config.model-name=${ANTHROPIC_MODEL}
-dev.langchain4j.cdi.plugin.chat-model.config.temperature=0.2
 dev.langchain4j.cdi.plugin.chat-model.config.max-tokens=2048
 dev.langchain4j.cdi.plugin.chat-model.config.max-retries=0
 dev.langchain4j.cdi.plugin.chat-model.config.timeout=PT60S
 ```
 
 `max-tokens` caps the response length; raise it if answers are truncated.
+
+No `temperature` is set on purpose: current Claude models reject sampling parameters (`temperature`, `top_p`, `top_k`) with `400 invalid_request_error: temperature is deprecated for this model`.
 
 ## 6. Test the connection
 
@@ -61,7 +62,6 @@ This confirms basic inference only. See [Getting Started](../getting-started.md#
 
 ## 7. Known limitations
 
-- Not yet tested for any lab.
 - **Structured output (Labs 1, 4):** no JSON-schema mode is enabled here, so LangChain4j relies on prompt-based JSON. Verify with your model.
 - **Tool calling (Lab 5):** model-dependent; verify the multi-step flow. Gemini's thought-signature properties do not apply to Claude and are not included.
 
@@ -70,6 +70,7 @@ This confirms basic inference only. See [Getting Started](../getting-started.md#
 | Symptom | Suggestion |
 |---|---|
 | Startup fails with an unresolvable property | `ANTHROPIC_API_KEY` or `ANTHROPIC_MODEL` is not set. |
+| HTTP 400 `temperature is deprecated for this model` | A sampling parameter was added to the properties file; remove it. |
 | HTTP 401 | Invalid key. |
 | HTTP 404 / model not found | The model id is wrong or unavailable to your account. |
 | HTTP 429 or credit errors | Rate limit or no credits; check Anthropic billing. |

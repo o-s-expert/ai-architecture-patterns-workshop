@@ -57,7 +57,7 @@ hide:
 |---|---|---|---|---|
 | [Google Gemini](gemini.md) | The verified default path | Yes (`GEMINI_API_KEY`) | Model-dependent; verified for Lab 5 with the configured model | Cloud API; check Google's current terms and quotas |
 | [OpenAI](openai.md) | Participants with OpenAI API access | Yes (`OPENAI_API_KEY`) | Model-dependent; not yet tested here | Cloud API billing, separate from ChatGPT |
-| [Anthropic Claude](anthropic.md) | Participants with Anthropic API access | Yes (`ANTHROPIC_API_KEY`) | Model-dependent; not yet tested here | Cloud API billing, separate from Claude subscriptions |
+| [Anthropic Claude](anthropic.md) | Participants with Anthropic API access | Yes (`ANTHROPIC_API_KEY`) | Verified for Labs 1 to 5 with current Claude models | Cloud API billing, separate from Claude subscriptions |
 | [OpenAI-Compatible APIs](openai-compatible.md) | Gateways and hosted or self-hosted compatible services | Usually; depends on the service | Varies by service and model | Depends on the service |
 | [Local Models (Ollama)](ollama.md) | Offline work, no cloud inference charges | No | Only for models that support tools; not yet tested here | No cloud charges; requires adequate hardware |
 
